@@ -1,0 +1,38 @@
+body{
+    background-color: 1F1F1F ;
+}
+
+.logo{
+    display: flex;
+    flex-direction: row;
+}
+
+header>section,nav{
+    display: flex;
+    flex-direction: row;
+}
+
+nav{
+    justify-content: space-around;
+    width: 80%;
+}
+
+.HoraireTrajet{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.RéserverPrix{
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+.Trajets{
+    display: flex;
+    justify-content: space-between;
+}
