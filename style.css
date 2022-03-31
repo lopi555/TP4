@@ -1,10 +1,27 @@
 body{
-    background-color: 1F1F1F ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:  var(--main-bg-color) ;
+    margin: 0;
+    padding: 0;
+}
+
+body> *{
+    width: 100%;
+}
+
+:root{
+    --main-bg-color: #1F1F1F;
+    --texte-color:#7B7B7B;
+    --secondery-bg-color:#C4C4C4;
+    --active-bg-color:#EADDFF  ;
 }
 
 .logo{
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
 header>section,nav{
@@ -15,6 +32,7 @@ header>section,nav{
 nav{
     justify-content: space-around;
     width: 80%;
+    align-items: center;
 }
 
 .HoraireTrajet{
@@ -35,4 +53,155 @@ nav{
 .Trajets{
     display: flex;
     justify-content: space-between;
+    padding-bottom: 5px;
+    width: 100%;
+}
+.common{
+    display: flex;
+    flex-direction: row;
+}
+
+.common img,.common p{
+    width: 50px;
+    padding-right: 5px;
+}
+.common{
+    width: 25%;
+}
+.Nothing{
+    display: flex;
+    justify-content: center;
+    color: var(--texte-color);
+    height: 20vh;
+    align-items: center;
+}
+
+.VoyageEnCours , .AnciensTrajets ,.Sign ,.Login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 20px;
+    background-color: var(--secondery-bg-color);
+    padding-left: 10px;
+    padding-right:10px;
+    padding-top: 1px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    width: 90%;
+}
+.Login , .Sign{
+    width: 50%;
+    align-items: center;
+}
+
+footer > section{
+    display: flex;
+    flex-direction: column;   
+    width: 25%;
+    padding-left: 25px;
+    
+}
+
+footer > section > a {
+    text-decoration: none;
+    color: var(--texte-color);
+}
+
+footer > section >a:hover{
+    text-decoration: underline;
+    color:aquamarine;
+}
+
+footer > section > p{
+    color: azure;
+}
+
+.trashtrain{
+    color: azure;
+}
+
+nav p a{
+    text-decoration: none;
+    color: var(--texte-color);
+}
+
+a{
+    text-decoration: none;
+}
+
+.nom{
+    color: var(--texte-color);
+    background-color: var(--secondery-bg-color);
+    padding-left: 20px;
+    padding-right:20px;
+    border-radius: 100px;
+}
+
+.nom:hover , .active{
+    background-color: var(--active-bg-color);
+    color: var(--main-bg-color);
+}
+
+form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 5px;
+    align-items: center;
+}
+
+form input{
+    border: none;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.buttonimg{
+    max-width: 20px;
+}
+.add_traject{
+    text-align: center;
+}
+
+.pom{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.réservation{
+    border-radius: 7px;
+    background-color: var(--main-bg-color);
+    color: var(--secondery-bg-color);
+    box-shadow: none;
+    border: none;
+}
+
+.log_sect{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.valide{
+    padding-top: 3vh;
+    width: 35%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.in input{
+    height: 30px;
+}
+
+.valide > input, .valide > a{
+    height: 40px;
+    width: 45%;
+}
+
+.valide > a > input{
+    height: 40px;
+    width: 100%;
 }
