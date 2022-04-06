@@ -176,6 +176,7 @@ form input{
     color: var(--secondery-bg-color);
     box-shadow: none;
     border: none;
+    height: 60%;
 }
 
 .log_sect{
@@ -204,4 +205,48 @@ form input{
 .valide > a > input{
     height: 40px;
     width: 100%;
+}
+
+
+.pom{
+    overflow:auto;
+    height: 200px;
+}
+
+.AnciensTrajets:first-child{
+    padding-top: 1000px;
+}
+
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--texte-color);
+  border-radius: 50px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: whitesmoke;
+  border-radius: 50px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(90, 90, 90);
+}
+
+.temps{
+    width: 17%;
+    text-align: center;
+}
+
+.ma{
+    margin-bottom: 5px;
+    border-bottom: 1px solid var(--secondery-bg-color);
 }

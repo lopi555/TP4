@@ -1,0 +1,15 @@
+body{
+    background-image: url(img/Fond-ecran.png);
+    background-size: cover;
+    backdrop-filter: blur(10px);
+    height: 100vh;
+}
+
+header,footer{
+    background-color: #1F1F1F;
+}
+
+body > section{
+    margin-top: 10%;
+}
+
