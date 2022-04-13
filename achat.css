@@ -1,0 +1,37 @@
+.petit_carre{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.petit_carre >*{
+    width: 25%;
+}
+
+.hih{
+    display: flex;
+    flex-direction: column;
+    background-color: var(#7B7B7B);
+}
+
+.type_transport{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.type_transport > *{
+    width: 25%;
+}
+
+.details{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.hours{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
