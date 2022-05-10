@@ -2,6 +2,8 @@
     background-color: white;
     display: flex;
     justify-content: space-around;
+    padding: 3em;
+    border-radius: 10px;
 }
 
 .petit_carre >*{
@@ -13,6 +15,7 @@
     flex-direction: column;
     background-color: #7B7B7B;
     justify-content: space-around;
+    border-radius: 10px;
 }
 
 .type_transport{
@@ -49,8 +52,16 @@
     margin: 0;
     text-align: center;
 }
+.second{
+    border-bottom: 3px solid;
+    padding-bottom: 3em;
+}
 
 .classe_reserve{
     border-radius: 5px;
     box-shadow: none;
+}
+
+.VoyageEnCours{
+    padding: 1em;
 }

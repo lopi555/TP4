@@ -143,11 +143,12 @@ a{
 }
 
 form{
+    width: 50%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content:space-around;
     padding-bottom: 5px;
-    align-items: center;
+    align-items: baseline;
 }
 
 form input{
@@ -181,6 +182,7 @@ form input{
 
 .log_sect{
     display: flex;
+    align-items: center;
     flex-direction: column;
     width: 100%;
 }
@@ -214,24 +216,24 @@ form input{
 }
 
 /* width */
-::-webkit-scrollbar {
+.AnciensTrajets >::-webkit-scrollbar {
     width: 10px;
   }
   
 /* Track */
-::-webkit-scrollbar-track {
+.AnciensTrajets >::-webkit-scrollbar-track {
   background: var(--texte-color);
   border-radius: 50px;
 }
 
 /* Handle */
-::-webkit-scrollbar-thumb {
+.AnciensTrajets >::-webkit-scrollbar-thumb {
   background: whitesmoke;
   border-radius: 50px;
 }
 
 /* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
+.AnciensTrajets >::-webkit-scrollbar-thumb:hover {
   background: rgb(90, 90, 90);
 }
 
@@ -243,4 +245,12 @@ form input{
 .ma{
     margin-bottom: 5px;
     border-bottom: 1px solid var(--secondery-bg-color);
+}
+
+form > section{
+    width: 25%;
+}
+
+form > section > *{
+    width: 100%;
 }
