@@ -30,6 +30,7 @@ header>section,nav{
 }
 
 nav{
+    flex-wrap: wrap;
     justify-content: space-around;
     width: 80%;
     align-items: center;
@@ -145,6 +146,7 @@ a{
 form{
     width: 50%;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content:space-around;
     padding-bottom: 5px;
@@ -248,9 +250,13 @@ form input{
 }
 
 form > section{
-    width: 25%;
+    width: 40%;
 }
 
 form > section > *{
     width: 100%;
+}
+
+.Recherche > *{
+    color:var(--texte-color);
 }

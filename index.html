@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body onload="addstations()">
     <header>
         <section>
             <section class="logo">
@@ -23,16 +23,23 @@
             </nav>
         </section>
     </header>
-    <form>
+    <form class="Recherche">
+        <datalist name="gare" id="gare"></datalist>
         <section class="gare_dep">
-            <p></p>
-            <input type="text" id="Recherchedepart" placeholder="gare de départ">
+            <p>gare départ</p>
+            <input type="text" id="Recherchedepart" onchange="gettravels()" placeholder="gare de départ" list="gare">
         </section>
         <section class="gare_arr">
-            <input type="text" id="Recherchearriver" placeholder="gare d'arriver">
+            <p>gare d'arriver</p>
+            <input type="text" id="Recherchearriver" onchange="gettravels()" placeholder="gare d'arriver" list="gare">
         </section>
         <section>
-            <input type="date" id="Recherchedate">
+            <p>date de départ</p>
+            <input type="date" id="Recherchedate" onchange="gettravels()">
+        </section>
+        <section>
+            <p>heure de départ</p>
+            <input type="time" id="Recherchetime" onchange="gettravels()">
         </section>
     </form>
     <section class="VoyageEnCours">
