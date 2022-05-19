@@ -1,11 +1,34 @@
+let depart;
+let arriver;
+let date;
+let time;
+
+async function addstations(type) {
+    let req = await (await fetch(`https://gigondas.iut-valence.fr:1112/sprietna/ihm/tp4/stations`)).json();
+    document.querySelectorAll(`#gare`).innerHTML = '';
+    for (let i = 0; i < req.length; i++) {
+        document.querySelector(`#gare`).innerHTML += `<option value="${req[i].name}"></option>`;
+    }
+}
 
 function gettravels() {
     // recuperation des données
-    depart = getid(document.getElementById("Recherchedepart").value);
-    arriver = getid(document.getElementById("Recherchearriver").value);
-    date = getid(document.getElementById("Recherchedate").value);
-    time = getid(document.getElementById("Recherchetime").value);
+    depart = document.getElementById("Recherchedepart").value;
+    arriver =document.getElementById("Recherchearriver").value;
+    date = document.getElementById("Recherchedate").value;
+    time = document.getElementById("Recherchetime").value;
     //recuperation les id
+    let req = await (await fetch(`https://gigondas.iut-valence.fr:1112/sprietna/ihm/tp4/stations`)).json();
+    for (let i = 0; i < req.length; i++) {
+        if (req[i].name == depart) {
+            depart = req[i].id;
+        }
+    }
+    for (let i = 0; i < req.length; i++) {
+        if (req[i].name == arriver) {
+            arriver = req[i].id;
+        }
+    }
     console.log(`http://gigondas:1111/sprietna/ihm/tp4/schedules?cityFrom=${depart}&cityTo=${arriver}&date=${date}&timeTo=${time}`);
     // vérifier si les champs sont remplis
     if (depart != "" && arriver != "") {
@@ -35,11 +58,4 @@ async function addstations(type) {
     }
 }
 
-async function getid(ville) {
-    let req = await (await fetch(`https://gigondas.iut-valence.fr:1112/sprietna/ihm/tp4/stations`)).json();
-    for (let i = 0; i < req.length; i++) {
-        if (req[i].city == ville) {
-            console.log(req[i].id);
-        }
-    }
-}
+
