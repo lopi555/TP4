@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="billets.css">
 </head>
 
-<body>
+<body onload="addstations()">
     <header>
         <section>
             <section class="logo">
@@ -25,62 +25,95 @@
         </section>
     </header>
     <form class="Recherche">
+        <datalist name="gare" id="gare"></datalist>
         <section class="gare_dep">
             <p>gare départ</p>
-            <input type="text" id="Recherchedepart" placeholder="gare de départ">
+            <input type="text" id="Recherchedepart" onchange="gettravels()" placeholder="gare de départ" list="gare">
         </section>
         <section class="gare_arr">
             <p>gare d'arriver</p>
-            <input type="text" id="Recherchearriver" placeholder="gare d'arriver">
+            <input type="text" id="Recherchearriver" onchange="gettravels()" placeholder="gare d'arriver" list="gare">
         </section>
         <section>
             <p>date de départ</p>
-            <input type="date" id="Recherchedate">
+            <input type="date" id="Recherchedate" onchange="gettravels()">
         </section>
         <section>
             <p>heure de départ</p>
-            <input type="time" id="Recherchetime">
+            <input type="time" id="Recherchetime" onchange="gettravels()">
         </section>
     </form>
     <section class="VoyageEnCours">
-        <p class="title">voyage en cours</p>
-        <p class="Nothing">aucune réservation en cours</p>
+        <section class="title">
+            <p>Réservation de billets</p>
+        </section>
+        <Section class="HoraireTrajet">
+            <section class="common">
+                <p>Type Transport</p>
+            </section>
+            <section>
+                <p>Départ-Destination</p>
+            </section>
+            <section>
+                <p class="temps">Temps de Trajet</p>
+            </section>
+            <section>
+                <p>date du voyage</p>
+            </section>
+            <section>
+                <p>horaire départ</p>
+            </section>
+        </Section>
+       <section id="Nothing" class="Nothing">
+           <p>aucun résultat</p>
+       </section> 
     </section>
     <section class="AnciensTrajets">
         <p>Trajet a venir</p>
-        <Section class="ma">
+        <Section class="HoraireTrajet">
+            <section class="common">
+                <p>Type Transport</p>
+            </section>
+            <section>
+                <p>Départ-Destination</p>
+            </section>
+            <section>
+                <p class="temps">Temps de Trajet</p>
+            </section>
+            <section>
+                <p>date du voyage</p>
+            </section>
+            <section>
+                <p>horaire départ</p>
+            </section>
+        </Section>
+        <Section class="Trajets">
             <Section class="HoraireTrajet">
                 <section class="common">
-                    <p>Type Transport</p>
+                    <img src="img/train.png" alt="image train">
+                    <p>train</p>
                 </section>
-                <p>Départ-Destination</p>
-                <p class="temps">Temps de Trajet</p>
-                <p>heure de départ</p>
-            </Section>
-        </section>
-        <section class="pom">
-            <Section class="Trajets">
-                <Section class="HoraireTrajet">
-                    <section class="common">
-                        <img src="img/train.png" alt="image train">
-                        <p>train</p>
-                    </section>
-                    <p>paris-brest</p> 
+                <section>
+                    <p>paris-brest</p>
+                </section>
+                <section>
                     <p class="temps">4h00</p>
-                    <p>8h40</p>
-                </Section>
-            </section>
-           <Section class="Trajets">
-                <Section class="HoraireTrajet">
-                    <section class="common">
-                        <img src="img/train.png" alt="image train">
-                        <p>train</p>
-                    </section>
-                    <p>brest-quimper</p> 
-                    <p class="temps">1h00</p>
+                </section>
+                <section>
+                    <p>2022-05-04</p>
+                </section>
+                <section>
                     <p>12h55</p>
-                </Section>
-            </section>
+                </section>
+            </Section>
+            <Section class="RéserverPrix">
+                <section>
+                    <button class="réservation">Réserver</button>
+                </section>
+                <section>
+                    <p>100€</p>
+                </section>    
+            </Section>
         </section>
     </section>
     <footer>
@@ -93,7 +126,7 @@
                     cookies</a>
         </section>
     </footer>
-    <script src="script.js"></script>
+    <script src="script_travel.js"></script>
 </body>
 
 </html>

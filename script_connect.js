@@ -18,6 +18,7 @@ document.getElementById('login').addEventListener('click', function () {
         })
         .then((userId) => {
             console.log(userId);
+            document.cookie = `userId=${userId}`;
         })
         .catch((error) => {
             error.text().then((errorMessage) => {
