@@ -1,3 +1,4 @@
+console.log(document.cookie.indexOf('userId='));
 let depart;
 let arriver;
 let date;
