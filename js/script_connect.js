@@ -1,27 +1,21 @@
 if (document.cookie.indexOf('userId=') == -1) {
-    document.cookie='userId=';
+    setCookie('userId', '', 20);
 }
 
-function setCookie(name,value) {
-    var expires = "";
-    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
-}
 
 function getCookie(name) {
-    var nameEQ = name + "=";
-    var ca = document.cookie.split(';');
-    for(var i=0;i < ca.length;i++) {
-        var c = ca[i];
-        while (c.charAt(0)==' ') c = c.substring(1,c.length);
-        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    let nameEQ = name + "=";
+    let ca = document.cookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
     }
     return null;
 }
 
-let cookie = document.cookie;
-let redirection = getCookie("userId");
-if (redirection != "") {
-    window.location.href = "http://127.0.0.1:5500/myaccount.html";
+if (getCookie("userId") != "") {
+    window.location.href = "http://127.0.0.1:5500/page/myaccount.html";
 }
 else {
     document.getElementById('login').addEventListener('click', function () {
@@ -43,11 +37,18 @@ else {
                 }
             })
             .then((userId) => {
-                setCookie("userId", userId);
-                window.location.href = "http://127.0.0.1:5500/myaccount.html";
+                setCookie('userId',userId,20);
+                window.location.href = "http://127.0.0.1:5500/page/myaccount.html";
             })
             .catch((error) => {
                 console.log(error);
             });
     })
+}
+
+function setCookie(c_name, value, exdays) {
+    let exdate = new Date();
+    exdate.setDate(exdate.getDate() + exdays);
+    let c_value = value + ((exdays == null) ? "" : "; expires=" + exdate.toUTCString()) + "; path=/";
+    document.cookie = c_name + "=" + c_value;
 }

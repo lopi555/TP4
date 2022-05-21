@@ -1,4 +1,3 @@
-console.log(document.cookie.indexOf('userId='));
 let depart;
 let arriver;
 let date;
@@ -42,13 +41,12 @@ async function gettravels() {
                 throw response
             }
         }).then(schedules => {
-            console.log(schedules)
             document.querySelector(`#Nothing`).innerHTML = '';
             for (let i = 0; i < schedules.length; i++) {
                 document.querySelector(`#Nothing`).innerHTML += `<Section class="Trajets">
                 <Section class="HoraireTrajet">
                     <section class="common">
-                        <img src="img/train.png" alt="image train">
+                        <img src="../img/train.png" alt="image train">
                         <p>${schedules[i].travel.type}</p>
                     </section>
                     <section>
@@ -79,8 +77,6 @@ async function gettravels() {
         });
     }
 }
-
-//window.history.pushState({}, "", "http://gigondas:1111/sprietna/ihm/tp4/schedules?cityFrom=1&cityTo=2&date=2022-06-12&timeTo=17:00");
 
 async function addstations(type) {
     let req = await (await fetch(`https://gigondas.iut-valence.fr:1112/sprietna/ihm/tp4/stations`)).json();

@@ -70,10 +70,9 @@ nav{
     width: 25%;
 }
 .Nothing{
-    padding-top: 84px;
     padding-right: 2px;
     padding-left: 1px;
-    display: flex;
+    display: flow-root;
     flex-direction: column;
     overflow-x: hidden;
     overflow-y: auto;
@@ -159,7 +158,7 @@ form{
     align-items: baseline;
 }
 
-form input{
+form input, .unlog{
     border: none;
     border-radius: 15px;
     text-align: center;
@@ -207,7 +206,7 @@ form input{
     height: 30px;
 }
 
-.valide > input, .valide > a{
+.valide > input, .valide > a , .unlog{
     height: 40px;
     width: 45%;
 }
@@ -224,7 +223,7 @@ form input{
 }
 
 /* width */
-.AnciensTrajets >::-webkit-scrollbar, {
+.AnciensTrajets >::-webkit-scrollbar {
     width: 10px;
   }
   
