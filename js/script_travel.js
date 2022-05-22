@@ -34,7 +34,7 @@ async function gettravels() {
     }
     // vérifier si les champs sont remplis
     if (depart != "" && arriver != "") {
-        fetch(`http://gigondas:1111/sprietna/ihm/tp4/schedules?cityFrom=${departid}&cityTo=${arriverid}&date=${date}&timeTo=${time}`).then(response => {
+        fetch(`https://gigondas.iut-valence.fr:1112/sprietna/ihm/tp4/schedules?cityFrom=${departid}&cityTo=${arriverid}&date=${date}&timeTo=${time}`).then(response => {
             if (response.ok) {
                 return response.json()
             } else {

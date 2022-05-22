@@ -19,7 +19,7 @@ if (getCookie("userId") != "") {
 }
 else {
     document.getElementById('login').addEventListener('click', function () {
-        fetch('http://gigondas:1111/sprietna/ihm/tp4/login', {
+        fetch('https://gigondas.iut-valence.fr:1112/sprietna/ihm/tp4/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
